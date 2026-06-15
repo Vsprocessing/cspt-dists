@@ -1,0 +1,25 @@
+{
+  "name": "cspt-unpacker",
+  "version": "0.1.0",
+  "description": "Browser-compatible CSPT unpacker distribution.",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js"
+    }
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "unpacker.d.ts",
+    "types.d.ts",
+    "cspt-core.wasm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vsprocessing/cspt-dists.git"
+  }
+}
