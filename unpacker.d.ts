@@ -1,4 +1,4 @@
-import type { AssignmentCheck, BundlePayload, CompileCheck, TemplateFile, ValidatorCheck } from "./types.js";
+import type { AssignmentCheck, BundlePayload, CompileCheck, EditableRegion, TemplateFile, ValidatorCheck } from "./types.js";
 export declare class Unpacker {
     private readonly bundleBytes;
     private payloadPromise;
@@ -6,6 +6,7 @@ export declare class Unpacker {
     id(): Promise<string>;
     displayName(): Promise<string>;
     description(): Promise<string>;
+    editableRegions(): Promise<EditableRegion[]>;
     checks(includeHidden?: boolean): Promise<AssignmentCheck[]>;
     validators(includeHidden?: boolean): Promise<ValidatorCheck[]>;
     compileChecks(includeHidden?: boolean): Promise<CompileCheck[]>;

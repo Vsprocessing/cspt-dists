@@ -26,11 +26,25 @@ export interface CompileCheck extends BaseCheck {
     args?: string[];
 }
 export type AssignmentCheck = ValidatorCheck | CompileCheck;
+export interface EditableRegion {
+    /**
+     * Relative path inside the template zip.
+     */
+    file: string;
+    id: string;
+    /**
+     * Text marker that opens the editable region. Only content after this marker
+     * and before endMarker should be editable by assignment-mode consumers.
+     */
+    startMarker: string;
+    endMarker: string;
+}
 export interface BundleInput {
     id: string;
     displayName: string;
     description: string;
     templateDir: string;
+    editableRegions?: EditableRegion[];
     checks: AssignmentCheck[];
 }
 export interface BundleOptions {
@@ -40,6 +54,7 @@ export interface BundlePayload {
     displayName: string;
     description: string;
     templateZipBase64: string;
+    editableRegions?: EditableRegion[];
     checks: AssignmentCheck[];
     createdAt: string;
 }
