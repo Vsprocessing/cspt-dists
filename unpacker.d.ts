@@ -6,6 +6,7 @@ export declare class Unpacker {
     id(): Promise<string>;
     displayName(): Promise<string>;
     description(): Promise<string>;
+    disclaimer(): Promise<string | undefined>;
     editableRegions(): Promise<EditableRegion[]>;
     checks(includeHidden?: boolean): Promise<AssignmentCheck[]>;
     validators(includeHidden?: boolean): Promise<ValidatorCheck[]>;

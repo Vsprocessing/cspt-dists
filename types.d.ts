@@ -43,6 +43,7 @@ export interface BundleInput {
     id: string;
     displayName: string;
     description: string;
+    disclaimer?: string;
     templateDir: string;
     editableRegions?: EditableRegion[];
     checks: AssignmentCheck[];
@@ -53,6 +54,7 @@ export interface BundlePayload {
     id: string;
     displayName: string;
     description: string;
+    disclaimer?: string;
     templateZipBase64: string;
     editableRegions?: EditableRegion[];
     checks: AssignmentCheck[];
